@@ -203,8 +203,7 @@ def templateBuildTasks() {
 }
 
 def isAndroidStudio() {
-    def sysProps = System.getProperties()
-    return sysProps != null && sysProps['idea.platform.prefix'] != null
+    return System.getProperty('idea.active') == "true"
 }
 
 task copyEditorReleaseApkToBin(type: Copy) {
